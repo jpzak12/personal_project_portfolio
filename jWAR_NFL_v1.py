@@ -164,66 +164,6 @@ def positional_rankings(pos):
 
         return pos_rank
 
-"""
-### Solve for UT positional rank ###
-def UT_positional_rankings():
-        pos_list_UT = dfff[(dfff['Pos1'] == 'UT')]
-        pos_list_UT.to_dict('list')
-
-        for pos in starting_roster:
-            #print(pos)
-            if (pos != 'UT' and pos !='SP' and pos !='RP'):
-                try:
-                    pos_list1_UT = dfff[(dfff['Pos1'] == pos)]
-                    pos_list2_UT = dfff[(dfff['Pos2'] == pos)]
-                    pos_list3_UT = dfff[(dfff['Pos3'] == pos)]
-                    pos_list4_UT = dfff[(dfff['Pos4'] == pos)]
-
-                    pos_list_UTu = pd.concat([pos_list1_UT,pos_list2_UT,pos_list3_UT,pos_list4_UT])
-                    #print("pos_list_UTu:", pos_list_UTu)
-                except Exception:
-                    try:
-                        pos_list1_UT = dfff[(dfff['Pos1'] == pos)]
-                        pos_list2_UT = dfff[(dfff['Pos2'] == pos)]
-                        pos_list3_UT = dfff[(dfff['Pos3'] == pos)]
-
-                        pos_list_UTu = pd.concat([pos_list1_UT,pos_list2_UT,pos_list3_UT])
-                        #print("pos_list_UTu:", pos_list_UTu)
-                    except Exception:
-                        pos_list1_UT = dfff[(dfff['Pos1'] == pos)]
-                        pos_list2_UT = dfff[(dfff['Pos2'] == pos)]
-
-                        pos_list_UTu = pd.concat([pos_list1_UT,pos_list2_UT])
-                        #print("pos_list_UTu:", pos_list_UTu)
-
-
-                pos_list_UT = pos_list_UTu.sort_values('Points',ascending=False)
-                #print("pos_list_UT:", pos_list_UT)
-
-                #Fetch positonal rankings based on league size and # of starters
-                pos_rank_UT = pos_list_UT.head(start_players[starting_roster.index(pos)])
-                rank_UT = pos_rank_UT['Name'].values.tolist()
-
-                for player_name in rank_UT:
-                    play_name = dffs[(dffs['Name'] == player_name)].index.values
-                    dffs.drop(index=play_name,axis=0,inplace=True)
-                #print(dffs)
-
-            else:
-                pass
-
-        pos_reff = dffs[(dffs['Pos_Ref'] == 'P')].index.values
-        dffs.drop(index=pos_reff,axis=0,inplace=True)
-        UT_rank_ut = dffs.sort_values('Points',ascending=False)
-        UT_rank_u = dffs.dropna(subset = ["Pos1"])
-        UT_rank = UT_rank_u.head(start_players[starting_roster.index('UT')])
-        try:
-            UT_ranks = pd.DataFrame(UT_rank,columns=['Name','Pos_Ref','Team','Points','Pos1','Pos2','Pos3','Pos4','SP_jWAR','RP_jWAR','C_jWAR','1B_jWAR','2B_jWAR','3B_jWAR','SS_jWAR','OF_jWAR','UT_jWAR'])
-        except Exception:
-            UT_ranks = pd.DataFrame(UT_rank,columns=['Name','Pos_Ref','Team','Points','Pos1','Pos2','Pos3','SP_jWAR','RP_jWAR','C_jWAR','1B_jWAR','2B_jWAR','3B_jWAR','SS_jWAR','OF_jWAR','UT_jWAR'])
-        return UT_ranks
-#print(UT_positional_rankings())
-"""
 
 #Fetch position multiple to account for # players per position
 def pos_mult(pos):
@@ -274,6 +214,7 @@ for pos in starting_roster:
 #########Determine Weekly Team Standard Deviation###########
 stdev_weekly_total = 30
 weekly_var = 0
+
 ### Commented out until can determine weekly stdev of scores ###
 #for pos in starting_roster:
 #    positional_rankings(pos)
