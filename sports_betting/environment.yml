@@ -1,0 +1,25 @@
+name: jWAR
+channels:
+  - conda-forge
+  - defaults
+  - mro
+dependencies:
+  - python==3.10.4
+  - ipopt==3.14.9
+  - git
+  - pip
+  - pip:
+    - ipykernel
+    - jupyterlab
+    - pandas==1.5.0
+    - statsmodels==0.13.2
+    - numpy==1.23.0
+    - sportsipy==0.6.0
+    - plotly==5.1.0
+    - beautifulsoup4==4.11.1
+    - pyomo==6.4.2
+    - black==22.8.0
+    - pyquery==1.4.0
+    - python-dateutil==2.8.1
+    - scipy == 1.9.2 
+    
