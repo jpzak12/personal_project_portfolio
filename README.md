@@ -9,4 +9,5 @@
 ## 2) MLB Fantasy Baseball Rankings (completed in 2020)
  - "jWAR" or Fantasy Wins Above Replacement
   
-## 3) NFL Fantasy WAR (in progress/unfinished)
+## 3) NFL Fantasy Rankings (in progress/unfinished)
+ - "jWAR" or Fantasy Wins Above Replacement
